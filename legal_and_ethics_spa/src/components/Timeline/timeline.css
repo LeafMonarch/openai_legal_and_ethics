@@ -1,0 +1,87 @@
+@import "@/styles/variable.css";
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 4rem auto;
+}
+
+/* Timeline Items */
+.timeline__item {
+    position: relative;
+    width: 50%;
+    display: flex;
+    margin: 3.5rem 0;
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+/* Left items */
+.timeline__item--left {
+    padding-right: 3rem;
+    transform: translateX(-60px);
+}
+
+/* Right items */
+.timeline__item--right {
+    margin-left: auto;
+    padding-left: 3rem;
+    justify-content: flex-end;
+    transform: translateX(60px);
+}
+
+/* Enter animation */
+.timeline__item--visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Timeline Card */
+.timeline__card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    max-width: 380px;
+    filter: drop-shadow(0px 6px 5px rgba(0, 0, 0, 0.12));
+}
+
+/* Text */
+.timeline__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.timeline__subtitle {
+    margin-top: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.timeline__description {
+    margin-top: 12px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+.timeline__date {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+    color: gray;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .timeline__item {
+        width: 100%;
+        padding-left: 50px !important;
+        padding-right: 0 !important;
+        justify-content: flex-start !important;
+        transform: translateX(0);
+    }
+}

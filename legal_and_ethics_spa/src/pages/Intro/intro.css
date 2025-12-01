@@ -1,0 +1,94 @@
+@import "@/styles/variable.css";
+
+.intro {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    font-family: "Inter", sans-serif;
+    color: var(--color-text-primary);
+}
+
+/* Header */
+.intro__header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.intro__title {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Introduction */
+.intro__section {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.intro__section-title {
+    font-size: 22px;
+    margin-bottom: 1rem;
+}
+
+.intro__paragraph {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: justify;
+    line-height: 1.7;
+    font-size: 16px;
+    color: var(--color-text-secondary);
+    /* uses new variable */
+}
+
+/* Timeline */
+.intro__timeline-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 2rem;
+}
+
+.intro__timeline-list {
+    border-left: 3px solid var(--color-border);
+    /* uses new variable */
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.intro__timeline-item {
+    margin-bottom: 2rem;
+}
+
+.intro__timeline-item h4 {
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-primary);
+    /* consistent title color */
+}
+
+/* Timeline Overrides – clean minimal OpenAI-style */
+.intro__timeline .vertical-timeline-element-content {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    box-shadow: none;
+    color: var(--color-text-primary);
+}
+
+.intro__timeline .vertical-timeline-element-content .vertical-timeline-element-date {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.intro__timeline-heading {
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+}
+
+.intro__timeline-icon {
+    background: var(--color-background) !important;
+    border: 1px solid var(--color-border) !important;
+    color: var(--color-text-primary) !important;
+    box-shadow: none !important;
+}

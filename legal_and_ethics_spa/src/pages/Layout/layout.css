@@ -1,0 +1,24 @@
+.layout {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Sidenav */
+.layout__sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+}
+
+/* Content area scroll */
+.layout__content {
+    margin-left: 220px;
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 3rem 4rem;
+}
