@@ -6,7 +6,8 @@ export default function SideNav() {
     return (
         <aside className="sidenav">
             <div className="sidenav__header">
-                <span className="logo">OpenAI</span>
+                <span className="sidenav__logo">OpenAI</span>
+                <span className="sidenav__sub_logo">by Yee Chean Chang</span>
             </div>
 
             <nav className="sidenav__links">

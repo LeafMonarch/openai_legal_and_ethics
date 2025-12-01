@@ -1,0 +1,28 @@
+@import "@/styles/variable.css";
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tabs__btn {
+    padding: 0.6rem 1.3rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.tabs__btn:hover {
+    background: var(--color-bg-hover);
+}
+
+.tabs__btn.active {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}

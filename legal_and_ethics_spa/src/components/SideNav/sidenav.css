@@ -16,22 +16,29 @@
 /* Header */
 .sidenav__header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
+
     gap: 8px;
     margin-bottom: 48px;
 }
 
-.logo {
+.sidenav__logo {
     font-size: 22px;
     font-weight: 600;
 }
+
+.sidenav__sub_logo {
+    font-size: 12px;
+    font-weight: 400;
+}
+
 
 /* Links */
 .sidenav__links {
     display: flex;
     flex-direction: column;
     gap: 22px;
-    /* matches the screenshot spacing */
     margin-top: 20px;
 }
 
