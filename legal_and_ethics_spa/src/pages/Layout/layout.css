@@ -16,7 +16,7 @@
 /* Content area scroll */
 .layout__content {
     margin-left: 220px;
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;

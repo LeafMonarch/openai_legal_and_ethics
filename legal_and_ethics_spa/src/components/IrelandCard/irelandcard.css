@@ -1,0 +1,31 @@
+@import "@/styles/variable.css";
+
+.ireland {
+    background: #e8fff0;
+    border-radius: 14px;
+    padding: 1.75rem;
+    border: 1px solid var(--color-border);
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.06));
+    margin: 2rem 0;
+}
+
+.ireland__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+}
+
+.ireland__list {
+    display: grid;
+    row-gap: 0.75rem;
+}
+
+.ireland__list span {
+    background: white;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+}
