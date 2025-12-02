@@ -1,0 +1,74 @@
+@import "@/styles/variable.css";
+
+.professional {
+    width: 100%;
+}
+
+.professional__header {
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+.professional__title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.professional__subtitle {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+}
+
+.professional__intro {
+    max-width: 700px;
+    margin: 1.5rem auto 3rem auto;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+/* Org card section */
+.professional__orgs {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Org detail sections */
+.professional__detail {
+    background: #d5d5fd;
+    padding: 2rem;
+    border-radius: 20px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.professional__detail--purple {
+    background: #c6a1ff;
+}
+
+.professional__detail--blue {
+    background: #1cff7a;
+}
+
+.professional__detail-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.professional__detail-sub {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+/* Accordions */
+.professional__accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}

@@ -1,0 +1,81 @@
+@import "@/styles/variable.css";
+
+.summarytable {
+    margin-top: 3rem;
+    background: #1a2438;
+    padding: 1.75rem;
+    border-radius: 14px;
+    color: white;
+    overflow-x: auto;
+}
+
+.summarytable__title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+}
+
+/* Clean, consistent table layout */
+.summarytable table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    table-layout: fixed;
+    /* removes jumpiness */
+}
+
+.summarytable th,
+.summarytable td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: left;
+    font-size: 0.95rem;
+    vertical-align: middle;
+    /* centers badges vertically */
+}
+
+/* Define column spacing harmony */
+.summarytable th:first-child,
+.summarytable td:first-child {
+    width: 36%;
+    /* Theme column */
+}
+
+.summarytable th:nth-child(2),
+.summarytable td:nth-child(2),
+.summarytable th:nth-child(3),
+.summarytable td:nth-child(3),
+.summarytable th:nth-child(4),
+.summarytable td:nth-child(4) {
+    width: 21%;
+    /* evenly spaced badge columns */
+}
+
+/* Badge styling */
+.badge {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.82rem;
+    border-radius: 8px;
+    font-weight: 600;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* Colours */
+.badge--red {
+    background: #d9534f;
+}
+
+.badge--yellow {
+    background: #f0ad4e;
+    color: black;
+}
+
+.badge--green {
+    background: #37c66d;
+}
+
+.badge--gray {
+    background: #6c757d;
+}
