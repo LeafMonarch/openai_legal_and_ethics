@@ -15,7 +15,7 @@ export default function SideNav() {
                 <Link to="/ethical">Ethical Theories</Link>
                 <Link to="/professional">Professional Ethics</Link>
                 <Link to="/legal">Legal & Governance</Link>
-                <Link to="/case">Case Study</Link>
+                <Link to="/references">References</Link>
             </nav>
         </aside>
     );
