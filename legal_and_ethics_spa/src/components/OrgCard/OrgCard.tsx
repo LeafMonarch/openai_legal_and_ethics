@@ -13,6 +13,7 @@ interface OrgCardProps {
 export default function OrgCard({ id, active, onClick, title, subtitle, iconColor, principles }: OrgCardProps) {
     return (
         <div
+            id={id}
             className={`orgcard ${active ? "orgcard--active" : ""}`}
             onClick={onClick}
         >
