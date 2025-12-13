@@ -37,7 +37,7 @@
 /* Blue glow (no double border) */
 .accordion--open {
     /* border-color: var(--color-primary); */
-    box-shadow: 4px 4px 4px 4px rgba(50, 115, 245, 0.25);
+    box-shadow: 4px 4px 4px 4px rgba(50, 115, 245, 0.5);
 }
 
 /* Chevron */

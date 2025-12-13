@@ -15,13 +15,11 @@
     margin-bottom: 1.25rem;
 }
 
-/* Clean, consistent table layout */
 .summarytable table {
     width: 100%;
     border-collapse: collapse;
     color: white;
-    table-layout: fixed;
-    /* removes jumpiness */
+    table-layout: auto;
 }
 
 .summarytable th,
@@ -31,24 +29,21 @@
     text-align: left;
     font-size: 0.95rem;
     vertical-align: middle;
-    /* centers badges vertically */
 }
 
-/* Define column spacing harmony */
+/* Keep Theme column reasonably wide */
 .summarytable th:first-child,
 .summarytable td:first-child {
-    width: 36%;
-    /* Theme column */
+    min-width: 200px;
+    width: 35%;
 }
 
-.summarytable th:nth-child(2),
-.summarytable td:nth-child(2),
-.summarytable th:nth-child(3),
-.summarytable td:nth-child(3),
-.summarytable th:nth-child(4),
-.summarytable td:nth-child(4) {
-    width: 21%;
-    /* evenly spaced badge columns */
+/* Badge columns should size naturally */
+.summarytable th:not(:first-child),
+.summarytable td:not(:first-child) {
+    width: auto;
+    text-align: center;
+    /* Better visual alignment */
 }
 
 /* Badge styling */

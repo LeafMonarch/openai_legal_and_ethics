@@ -11,11 +11,11 @@ export default function SideNav() {
             </div>
 
             <nav className="sidenav__links">
-                <Link to="/">Intro</Link>
-                <Link to="/ethical">Ethical Theories</Link>
-                <Link to="/professional">Professional Ethics</Link>
-                <Link to="/legal">Legal & Governance</Link>
-                <Link to="/references">References</Link>
+                <Link to="/"><span>Intro</span></Link>
+                <Link to="/ethical"><span>Ethical Theories</span></Link>
+                <Link to="/professional"><span>Professional Ethics</span></Link>
+                <Link to="/legal"><span>Legal & Governance</span></Link>
+                <Link to="/references"><span>References</span></Link>
             </nav>
         </aside>
     );

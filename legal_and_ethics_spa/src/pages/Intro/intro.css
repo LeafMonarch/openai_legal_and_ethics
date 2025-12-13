@@ -7,13 +7,12 @@
     align-items: center;
     padding-top: 2rem;
     font-family: "Inter", sans-serif;
-    color: var(--color-text-primary);
+    color: white;
 }
 
 /* Header */
 .intro__header {
     text-align: center;
-    margin-bottom: 2rem;
 }
 
 .intro__title {
@@ -24,7 +23,6 @@
 /* Introduction */
 .intro__section {
     text-align: center;
-    margin: 3rem 0;
 }
 
 .intro__section-title {
@@ -34,13 +32,41 @@
 
 .intro__paragraph {
     max-width: 700px;
-    margin: 0 auto;
+    margin: auto;
+    margin-bottom: 2em;
     text-align: justify;
     line-height: 1.7;
     font-size: 16px;
-    color: var(--color-text-secondary);
-    /* uses new variable */
 }
+
+sup {
+    font-size: 0.7em;
+    line-height: 1;
+    vertical-align: super;
+    margin-left: 2px;
+}
+
+.intro__hero {
+    background: var(--color-text-primary);
+    padding: 2.5rem 3rem;
+    border-radius: 20px;
+    max-width: 900px;
+    width: 90%;
+    margin-bottom: 3rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.intro__hero--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
 
 /* Timeline */
 .intro__timeline-title {
@@ -91,4 +117,29 @@
     border: 1px solid var(--color-border) !important;
     color: var(--color-text-primary) !important;
     box-shadow: none !important;
+}
+
+.intro__timeline-wrapper {
+    background: linear-gradient(to bottom,
+            var(--color-text-primary) 0%,
+            var(--color-background) 100%);
+    padding: 2.5rem 3rem;
+    border-radius: 20px;
+    max-width: 900px;
+    width: 90%;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Start hidden */
+.intro__hero--hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* When visible in viewport */
+.intro__hero--visible {
+    opacity: 1;
+    transform: translateY(0);
 }
