@@ -1,30 +1,51 @@
 import "./governance.css";
-import Accordion from "../../components/Accordion/Accordion";
-import Timeline from "../../components/Timeline/Timeline";
+import {
+    Scale,
+    PiggyBank,
+    AlertTriangle,
+    BriefcaseBusiness,
+    ShieldAlert
+} from "lucide-react";
+import { useEffect, useRef } from "react";
+import GovernanceTimeline from "../../components/GovernanceTimeline/GovernanceTimeline";
 
 export default function Governance() {
+    const heroRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    entry.target.classList.toggle(
+                        "gov__hero--visible",
+                        entry.isIntersecting
+                    );
+                });
+            },
+            { threshold: 0.2 }
+        );
+
+        if (heroRef.current) observer.observe(heroRef.current);
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <div className="gov">
 
             {/* Hero */}
-            <section className="gov__hero">
+            <section
+                ref={heroRef}
+                className="gov__hero gov__hero--hidden">
                 <h1 className="gov__hero-title">Legal Issues & Governance Failures</h1>
                 <p className="gov__hero-sub">
                     Regulatory Violations & Corporate Governance Crisis
                 </p>
                 <p className="gov__hero-desc">
-                    Comprehensive analysis of data protection violations, intellectual property infringement,
+                    Within this page, I will demonstrate an analysis of OpenAI's data protection violations, intellectual property infringement,
                     corporate structure concerns, tax implications, anti-trust issues, and the November 2023
                     governance crisis.
                 </p>
-
-                <div className="gov__stats">
-                    <div className="gov__stat"><strong>4+</strong><span>GDPR Violations</span></div>
-                    <div className="gov__stat"><strong>10+</strong><span>IP Lawsuits</span></div>
-                    <div className="gov__stat"><strong>5+</strong><span>Regulatory Probes</span></div>
-                    <div className="gov__stat"><strong>100%</strong><span>Board Changes</span></div>
-                    <div className="gov__stat"><strong>5 days</strong><span>Crisis Duration</span></div>
-                </div>
             </section>
 
 
@@ -32,38 +53,40 @@ export default function Governance() {
             <section className="gov__framework">
                 <h1>Legal Framework</h1>
                 <p className="gov__framework-sub">
-                    Five major areas of legal concern spanning data protection, intellectual property,
+                    The five major area of Legal Framwork that I will cover spans across data protection, intellectual property,
                     corporate governance, taxation, and competition law
                 </p>
 
                 <div className="gov__framework-grid">
 
                     <div className="govcard">
-                        <div className="govcard__icon govcard__icon--orange">shield icon placeholder</div>
+                        <div className="govcard__icon govcard__icon--orange">
+                            <ShieldAlert size={64} />
+                        </div>
                         <h3>Data Protection</h3>
                         <p>GDPR & Privacy Laws</p>
                         <ul>
-                            <li>Transparency violations</li>
-                            <li>Italy ban</li>
-                            <li>Unlawful scraping</li>
-                            <li>Inadequate disclosures</li>
+                            <li>Transparency violations<sup>[1]</sup></li>
+                            <li>Inadequate disclosures<sup>[1]</sup></li>
                         </ul>
                     </div>
 
                     <div className="govcard">
-                        <div className="govcard__icon govcard__icon--purple">law icon placeholder</div>
+                        <div className="govcard__icon govcard__icon--purple">
+                            <AlertTriangle size={64} />
+                        </div>
                         <h3>Intellectual Property</h3>
                         <p>Copyright infringement</p>
                         <ul>
-                            <li>NYT lawsuit</li>
-                            <li>Artist lawsuits</li>
                             <li>Unlicensed content</li>
                             <li>Fair use questions</li>
                         </ul>
                     </div>
 
                     <div className="govcard">
-                        <div className="govcard__icon govcard__icon--blue">gov temple icon placeholder</div>
+                        <div className="govcard__icon govcard__icon--blue">
+                            <BriefcaseBusiness size={64} />
+                        </div>
                         <h3>Corporate Law</h3>
                         <p>Structure & Governance</p>
                         <ul>
@@ -75,7 +98,9 @@ export default function Governance() {
                     </div>
 
                     <div className="govcard">
-                        <div className="govcard__icon govcard__icon--green">money icon placeholder</div>
+                        <div className="govcard__icon govcard__icon--green">
+                            <PiggyBank size={64} />
+                        </div>
                         <h3>Tax Law</h3>
                         <p>Non-profit Status</p>
                         <ul>
@@ -87,7 +112,9 @@ export default function Governance() {
                     </div>
 
                     <div className="govcard">
-                        <div className="govcard__icon govcard__icon--red">fire or appropriate icon placeholders</div>
+                        <div className="govcard__icon govcard__icon--red">
+                            <Scale size={64} />
+                        </div>
                         <h3>Competition Law</h3>
                         <p>Anti-trust concerns</p>
                         <ul>
@@ -101,60 +128,6 @@ export default function Governance() {
                 </div>
             </section>
 
-
-            {/* Legal Issues / Accordion */}
-            <section className="gov__issues">
-                <h1>Legal Issues</h1>
-                <p className="gov__issues-sub">
-                    Comprehensive analysis of legal violations and regulatory concerns
-                </p>
-
-                <div className="gov__issue-card">
-                    <div className="gov__issue-header">
-                        <div className="gov__issue-icon gov__issue-icon--orange">shield icon placeholders</div>
-                        <div>
-                            <h3>Data Protection</h3>
-                            <p>GDPR & Regulatory Compliance</p>
-                        </div>
-                    </div>
-
-                    <div className="gov__issue-accordions">
-                        <Accordion
-                            title="Lack of transparency over training data"
-                            violations={[
-                                "OpenAI has not disclosed comprehensive info on training data",
-                                "Violates GDPR transparency requirements"
-                            ]}
-                        />
-                        <Accordion
-                            title="Unclear lawful basis for scraping"
-                            violations={[
-                                "GDPR requires lawful basis for processing personal data",
-                                "Mass scraping lacks justification"
-                            ]}
-                        />
-                        <Accordion
-                            title="Inadequate disclosures"
-                            violations={[
-                                "Users were never informed their data may train commercial AI"
-                            ]}
-                        />
-                        <Accordion
-                            title="Italy’s ChatGPT Ban"
-                            violations={[
-                                "Italy banned ChatGPT in 2023 over GDPR violations and unlawful data collection"
-                            ]}
-                        />
-                    </div>
-
-                    <div className="gov__issue-footer">
-                        Total Concerns Identified: <strong>4</strong> — Critical Impact: <strong>2</strong>
-                    </div>
-                </div>
-
-            </section>
-
-
             {/* Governance Issues */}
             <section className="gov__governance">
                 <h1>Governance Issues</h1>
@@ -165,11 +138,9 @@ export default function Governance() {
                 <div className="gov__gov-grid">
 
                     <div className="govgov-card">
-                        <div className="govgov-icon govgov-icon--red">icon placeholder</div>
                         <h3>Non-profit Board Structure</h3>
                         <ul>
-                            <li>Board independent “on paper” only</li>
-                            <li>No real power against momentum</li>
+                            <li>Board independent “on paper” only<sup>[1]</sup></li>
                             <li>Unable to enforce safety priorities</li>
                             <li>Governance structure “fictional”</li>
                             <li>No enforcement mechanisms</li>
@@ -178,10 +149,9 @@ export default function Governance() {
                     </div>
 
                     <div className="govgov-card">
-                        <div className="govgov-icon govgov-icon--orange">icon placeholder</div>
                         <h3>Shift to Commercial Focus</h3>
                         <ul>
-                            <li>Old board replaced by investor-aligned directors</li>
+                            <li>Old board replaced by investor-aligned directors<sup>[1]</sup></li>
                             <li>Safety researchers removed</li>
                             <li>Mission drift to “scale business”</li>
                             <li>Commercial strategists dominate decisions</li>
@@ -190,13 +160,12 @@ export default function Governance() {
                     </div>
 
                     <div className="govgov-card">
-                        <div className="govgov-icon govgov-icon--red">icon placeholder</div>
                         <h3>Accountability Failures</h3>
                         <ul>
                             <li>No external audit of safety</li>
                             <li>Poor transparency in decisions</li>
                             <li>No checks on executive power</li>
-                            <li>Board unable to hold leadership accountable</li>
+                            <li>Board unable to hold leadership accountable[1]</li>
                         </ul>
                         <span className="govgov-tag govgov-tag--critical">CRITICAL SEVERITY</span>
                     </div>
@@ -228,7 +197,7 @@ export default function Governance() {
                             <li>Board powerless against corporate pressure</li>
                             <li>Profit motives dominate decisions</li>
                             <li>Mission drift toward commercialization</li>
-                            <li>No effective accountability</li>
+                            <li>No effective accountability<sup>[1]</sup></li>
                         </ul>
                     </div>
 
@@ -241,21 +210,12 @@ export default function Governance() {
                 <h1>The Governance Crisis</h1>
                 <p>A five-day crisis that exposed fundamental flaws in OpenAI’s governance structure</p>
 
-                <Timeline />
+                <GovernanceTimeline />
             </section>
 
 
             {/* Key Insights */}
             <section className="gov__insights">
-                <h2>Key Insights</h2>
-
-                <div className="gov__insights-grid">
-                    <div className="insight"><strong>5 days</strong><p>Board Had No Real Power</p></div>
-                    <div className="insight"><strong>95%</strong><p>Employee Leverage</p></div>
-                    <div className="insight"><strong>$13B</strong><p>Investor Control</p></div>
-                    <div className="insight"><strong>100%</strong><p>Governance Fiction</p></div>
-                </div>
-
                 <div className="gov__aftermath">
                     <h3>Aftermath & Implications</h3>
                     <p>

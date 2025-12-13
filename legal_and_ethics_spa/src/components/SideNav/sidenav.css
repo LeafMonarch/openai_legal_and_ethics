@@ -43,13 +43,42 @@
 }
 
 .sidenav__links a {
-    font-size: 16px;
-    font-weight: 400;
-    cursor: pointer;
+    position: relative;
+    padding: 6px 10px;
+    border-radius: 6px;
     text-decoration: none;
     color: var(--color-black);
+    overflow: hidden;
+    transition: color 0.25s ease;
 }
 
-.sidenav__links a:hover {
-    opacity: 0.6;
+/* Hover background layer */
+.sidenav__links a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-text-primary);
+    /* solid dark fade */
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    z-index: 0;
+    /* behind the text */
+}
+
+/* Slide + fade in */
+.sidenav__links a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Text above the background */
+.sidenav__links a span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Text becomes white on hover */
+.sidenav__links a:hover span {
+    color: white;
 }

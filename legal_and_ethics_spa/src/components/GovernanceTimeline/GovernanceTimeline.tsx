@@ -1,5 +1,5 @@
 import { useEffect, useRef, Fragment } from "react";
-import "./timeline.css";
+import "./governancetimeline.css";
 
 interface TimelineItemData {
     title: string;
@@ -9,37 +9,52 @@ interface TimelineItemData {
 
 const timelineData: TimelineItemData[] = [
     {
-        title: "Non-Profit Phase",
-        subtitle: "2015–2018",
-        description:
-            "Founded as a non-profit, registered as 501(c)(3), collected datasets under an open mission.<sup>[1][3]</sup>",
+        title: "Day 1 — Sam Altman Fired",
+        subtitle: "November 17, 2023",
+        description: `
+            The OpenAI board abruptly removes Sam Altman as CEO, stating he was 
+            “not consistently candid” in communications. Greg Brockman is removed as chair 
+            and resigns hours later. Shock across the industry.<sup>[1]</sup>
+        `,
     },
     {
-        title: "Capped-Profit Structure",
-        subtitle: "2018–2019",
-        description:
-            "Created OpenAI LP, announced funding shift, Microsoft invests $1B.<sup>[1][3]</sup>",
+        title: "Day 2 — Internal Chaos Begins",
+        subtitle: "November 18, 2023",
+        description: `
+            Employees express confusion and anger. Attempts to negotiate Altman's return begin. 
+            The board provides no clear explanation. Microsoft signals support for Altman.<sup>[1]</sup>
+        `,
     },
     {
-        title: "Technology Matures",
-        subtitle: "2020–2022",
-        description: "GPT-3 launches, ChatGPT reaches 100M users.<sup>[1][3]</sup>",
+        title: "Day 3 — Interim CEO Appointed",
+        subtitle: "November 19, 2023",
+        description: `
+            Mira Murati, briefly interim CEO, is replaced by former Twitch CEO Emmett Shear. 
+            Altman visits OpenAI HQ wearing a guest badge, signaling ongoing negotiations.<sup>[1]</sup>
+        `,
     },
     {
-        title: "Commercial Expansion",
-        subtitle: "2023",
-        description:
-            "ChatGPT Plus launches, GPT-4 released, plugins introduced, EU investigations begin.<sup>[1]</sup>",
+        title: "Day 4 — Employee Revolt",
+        subtitle: "November 20, 2023",
+        description: `
+            Over 740 of OpenAI’s ~770 employees sign a letter threatening to quit and 
+            join Microsoft unless the board resigns and Altman returns.  
+            The board becomes isolated and under extreme pressure.<sup>[1]</sup>
+        `,
     },
     {
-        title: "Governance Crisis",
-        subtitle: "2023–2024",
-        description:
-            "Sam Altman fired and reinstated, board replaced, regulatory scrutiny increases.<sup>[1]</sup>",
+        title: "Day 5 — Altman Reinstated",
+        subtitle: "November 21–22, 2023",
+        description: `
+            Sam Altman is reinstated as CEO. The board is replaced with a new governance 
+            structure. Microsoft gains a non-voting observer seat.  
+            Crisis ends but raises major governance concerns.<sup>[1]</sup>
+        `,
     },
 ];
 
-const Timeline = () => {
+
+const GovernanceTimeline = () => {
     const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
     useEffect(() => {
@@ -86,4 +101,4 @@ const Timeline = () => {
     );
 };
 
-export default Timeline;
+export default GovernanceTimeline;

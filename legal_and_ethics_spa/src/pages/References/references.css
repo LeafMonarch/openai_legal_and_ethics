@@ -1,0 +1,60 @@
+@import "@/styles/variable.css";
+
+.references {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.references__title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.reference-item {
+    background: var(--color-background);
+    border-radius: 16px;
+    padding: 1.8rem;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.reference-item__title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.reference-item__author {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+.reference-item__meta {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.reference-item__abstract {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+    color: #444;
+}
+
+.reference-item__link {
+    font-weight: 600;
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.reference-item__link:hover {
+    text-decoration: underline;
+}
